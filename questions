@@ -1,0 +1,8 @@
+Rulesets: https://github.com/tdecelle/462-lab8
+
+Questions:
+1. A sensor could be in more than one collection since it would just need a subscription to the manager to give all of its temperatures. This means multiple managers may double count a sensor.
+2. I could make a key which is required to run the sensors report, and only certain picos get access to that key.
+3. The debug logs show the order in which the rules were run. All of the sensor pico rules were called before the full report was generated.
+4. I could give a timeout and retry the scatter method just for the sensors which hadn't responded yet. I could know through their Rxs.
+5. I could retry the scatter for the sensor picos which didn't respond. Also, I could just give the report of what responded.
